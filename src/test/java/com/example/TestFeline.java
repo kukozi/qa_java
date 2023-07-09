@@ -10,7 +10,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class TestFeline {
     @Spy
-    public Feline testFeline;
+    private Feline testFeline;
 
     @Test
     public void eatMeatReturnPredator() throws Exception {
