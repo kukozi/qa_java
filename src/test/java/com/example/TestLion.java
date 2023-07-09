@@ -1,14 +1,12 @@
 package com.example;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.Assert;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
@@ -45,15 +43,23 @@ public class TestLion {
         int expectedResult = 1;
         int actualResult = testLion.getKittens();
         Assert.assertEquals("Wrong int returned", expectedResult, actualResult);
-
     }
+
     @Test
     public void testDoesHaveMane() {
         Assert.assertEquals("Wrong int returned", hasMane, testLion.doesHaveMane());
     }
+
     @Test
     public void testGetFood() throws Exception {
         Assert.assertEquals("Wrong list returned", List.of("Животные", "Птицы", "Рыба"), testLion.getFood());
+    }
+
+    @Test
+    public void testLionWrongSexPassed() throws Exception {
+        String exceptionMessage = "Используйте допустимые значения пола животного - самей или самка";
+        Exception exception = Assert.assertThrows(Exception.class, () -> new Lion("Лев-квир"));
+        Assert.assertEquals("Exception handled improperly", exceptionMessage, exception.getMessage());
     }
 
 }
