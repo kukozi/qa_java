@@ -1,8 +1,8 @@
 package com.example;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.Assert;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -17,12 +17,14 @@ public class TestFeline {
         testFeline.eatMeat();
         Mockito.verify(testFeline).getFood("Хищник");
     }
+
     @Test
     public void getFamily() {
         String expectedResult = "Кошачьи";
         String actualResult = testFeline.getFamily();
         Assert.assertEquals("Wrong string returned", expectedResult, actualResult);
     }
+
     @Test
     public void getKittens() {
         int expectedResult = 1;
