@@ -1,0 +1,59 @@
+package com.example;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.Assert;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import java.util.List;
+
+@RunWith(Parameterized.class)
+public class TestLion {
+    private Lion testLion;
+    private String sex;
+    private boolean hasMane;
+
+    @Mock
+    private Feline testFeline;
+
+    public TestLion(String sex, boolean hasMane) {
+        this.sex = sex;
+        this.hasMane = hasMane;
+    }
+
+    @Parameterized.Parameters
+    public static Object[][] lionTestSet() {
+        return new Object[][]{
+                {"Самец", true},
+                {"Самка", false}
+        };
+    }
+
+    @Before
+    public void initLion() throws Exception {
+        MockitoAnnotations.initMocks(this);
+        testLion = new Lion(sex);
+    }
+
+    @Test
+    public void testGetKittens() {
+        int expectedResult = 1;
+        int actualResult = testLion.getKittens();
+        Assert.assertEquals("Wrong int returned", expectedResult, actualResult);
+
+    }
+    @Test
+    public void testDoesHaveMane() {
+        Assert.assertEquals("Wrong int returned", hasMane, testLion.doesHaveMane());
+    }
+    @Test
+    public void testGetFood() throws Exception {
+        Assert.assertEquals("Wrong list returned", List.of("Животные", "Птицы", "Рыба"), testLion.getFood());
+    }
+
+}
