@@ -34,3 +34,19 @@ mvn verify
 
 ## Coverage analysis
 [Jacoco report](target%2Fsite%2Fjacoco%2Findex.html)
+
+<!-- CONTACT -->
+## Contact
+Telegram: [@kukozi](https://t.me/kukozi)
+</br>
+Project Link: [https://github.com/kukozi/sprint4_scooter](https://github.com/kukozi/sprint4_scooter)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[Java-shield]: https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white
+[Java-url]: https://www.java.com/en/
+[GitHub-shield]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+[GitHub-url]: https://github.com/kukozi
