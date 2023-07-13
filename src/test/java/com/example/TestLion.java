@@ -16,12 +16,15 @@ public class TestLion {
     private String sex;
     private boolean hasMane;
 
-    @Mock
-    private Feline testFeline;
-
     public TestLion(String sex, boolean hasMane) {
         this.sex = sex;
         this.hasMane = hasMane;
+    }
+
+    @Before
+    public void initLion() throws Exception {
+        MockitoAnnotations.initMocks(this);
+        testLion = new Lion(sex);
     }
 
     @Parameterized.Parameters
@@ -30,12 +33,6 @@ public class TestLion {
                 {"Самец", true},
                 {"Самка", false}
         };
-    }
-
-    @Before
-    public void initLion() throws Exception {
-        MockitoAnnotations.initMocks(this);
-        testLion = new Lion(sex);
     }
 
     @Test
