@@ -30,7 +30,13 @@ public class TestFeline {
         int expectedResult = 1;
         int actualResult = testFeline.getKittens();
         Assert.assertEquals("Wrong int returned", expectedResult, actualResult);
-
+    }
+    @Test
+    public void getKittensPredefined() {
+        int expectedResult = 3;
+        int predefinedKittens = 3;
+        int actualResult = testFeline.getKittens(predefinedKittens);
+        Assert.assertEquals("Wrong int returned", expectedResult, actualResult);
     }
 
 }
